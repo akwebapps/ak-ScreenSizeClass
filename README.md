@@ -27,7 +27,7 @@ $.akScreenSizeClass("set");
 You can listen for changes. This even will be triggered every time the class is changed.
 ```javascript
 $(document).on("sizeClassChanged",function(e,data){
-    //do something with the data
-	//returns {"width":currentScreenWidth,"class":currentBodyClass}
+   //do something with the data
+   //returns {"width":currentScreenWidth,"class":currentBodyClass}
 })
 ```
