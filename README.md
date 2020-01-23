@@ -13,7 +13,6 @@ Grab and assign bootstrap size classes to body tag for stylesheet shortcuts. Som
 
 ## Get Values
 ```javascript
-var currentClass = $.akScreenSizeClass(); //gets the current body class assignment
 var currentClass = $.akScreenSizeClass("class"); //gets the current body class assignment
 var currentWidth = $.akScreenSizeClass("width"); //gets the current window width
 ```
