@@ -1,7 +1,14 @@
 # akScreenSizeClass
 Grab and assign bootstrap size classes to body tag for stylesheet shortcuts. Sometimes it sucks having to deal with `@media` classes in your stylesheet. Wouldn't it be easier to reference the size by a class instead?
 
-## Breakpoints & Body Classes
+## Initialization & Usage
+```javascript
+$.akScreenSizeClass(actionStr,params);
+```
+-	`actionStr` (string; optional)
+-	`params` (obj; optional)
+
+## Default Breakpoints & Body Classes
 | Min Width  | Max Width | Body Class  |
 | ---------- |:---------:| -----------:|
 | <          | 575       | `.body-xs`  |
@@ -17,7 +24,7 @@ var currentClass = $.akScreenSizeClass("class"); //gets the current body class a
 var currentWidth = $.akScreenSizeClass("width"); //gets the current window width
 ```
 
-## Reinitialize Values
+## Reinitialize & Set Body Class
 The width is set every time the window is resized but you MAY want to force it to reassign the body class.
 ```javascript
 $.akScreenSizeClass("set");
@@ -30,4 +37,15 @@ $(document).on("sizeClassChanged",function(e,data){
    //do something with the data
    //returns {"width":currentScreenWidth,"class":currentBodyClass}
 })
+```
+
+## Change Breakpoints
+Don't like the default breakpoints? You can change them by passing the minimum width of each in the `params`. If the first parameter `actionStr` is `"set"` then the breakpoints will be set for the remainer of the page session.
+```javascript
+$.akScreenSizeClass("set",{
+	sm: 576,
+	md: 768,
+	lg: 992,
+	xl: 1200
+});
 ```
